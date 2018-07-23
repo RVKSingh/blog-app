@@ -1,5 +1,22 @@
+
 <h2>New article</h2>
+
+
 <%= form_for(@article) do |f| %>
+	
+<%if @article.errors.any? %>
+
+	<%=pluralize(@article.errors.count,"error")%>
+	prohibited this article from being saved:
+	<ul>
+		<%@article.errors.full_messages.each do |msg|%>
+		<li style="color: red;">
+			<%=msg%>
+		</li>
+		<%end%>
+	</ul>
+	
+<%end%>
  <%= f.label :title %>
  <%= f.text_field :title %>
  <%= f.label :body %>
