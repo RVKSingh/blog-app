@@ -8,6 +8,15 @@
 </head>
 <body>
 
+<% flash.each do |type, msg| %>
+    <%= msg %>
+<% end %>
+
+<% if alert.present? %> # or :notice
+   <%= alert %>
+<% end %>
+
+
 <%= yield %>
 
 </body>
