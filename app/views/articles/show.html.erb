@@ -2,3 +2,5 @@
 <%=@article.created_at.strftime("%b %d, %y")%><br>
 
 <%=@article.body%>
+
+<%= link_to "Edit Article", edit_article_path(@article) %>
